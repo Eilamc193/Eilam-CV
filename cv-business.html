@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Eilam Cohen – Business CV</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #eef2f7;
+    color: #1a1a1a;
+    line-height: 1.5;
+    font-size: 10pt;
+  }
+
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    margin: 30px auto;
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+
+  /* ── Header ── */
+  .cv-header {
+    background: #0f766e;
+    color: #fff;
+    padding: 36px 48px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cv-header-text { flex: 1; }
+
+  .cv-header h1 {
+    font-size: 26pt;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 3px;
+  }
+
+  .cv-header .cv-title {
+    font-size: 11pt;
+    font-weight: 400;
+    opacity: 0.78;
+    letter-spacing: 0.4px;
+    margin-bottom: 20px;
+  }
+
+  .cv-contacts {
+    display: flex;
+    gap: 28px;
+    font-size: 9pt;
+    opacity: 0.88;
+    flex-wrap: wrap;
+  }
+
+  .cv-photo {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.6);
+    margin-left: 32px;
+    flex-shrink: 0;
+  }
+
+  /* ── Body ── */
+  .cv-body {
+    padding: 32px 48px 40px;
+  }
+
+  /* ── Summary ── */
+  .summary {
+    margin-bottom: 28px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .summary p {
+    font-size: 10pt;
+    color: #374151;
+    line-height: 1.7;
+  }
+
+  /* ── Sections ── */
+  .cv-section {
+    margin-bottom: 24px;
+  }
+
+  .section-heading {
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: #0f766e;
+    border-bottom: 2px solid #0f766e;
+    padding-bottom: 5px;
+    margin-bottom: 16px;
+  }
+
+  /* ── Experience ── */
+  .exp-item {
+    margin-bottom: 22px;
+  }
+
+  .exp-item:last-child { margin-bottom: 0; }
+
+  .exp-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1px;
+  }
+
+  .exp-role {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #111827;
+  }
+
+  .exp-period {
+    font-size: 9pt;
+    color: #6b7280;
+    font-weight: 500;
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+
+  .exp-org {
+    font-size: 9.5pt;
+    color: #4b5563;
+    margin-bottom: 9px;
+  }
+
+  .exp-bullets { list-style: none; }
+
+  .exp-bullets li {
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 5px;
+    font-size: 9.5pt;
+    color: #374151;
+    line-height: 1.55;
+  }
+
+  .exp-bullets li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #0f766e;
+    font-weight: bold;
+  }
+
+  /* ── Bottom grid ── */
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  /* ── Education ── */
+  .edu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+  }
+
+  .edu-degree {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #111827;
+  }
+
+  .edu-school {
+    font-size: 9.5pt;
+    color: #4b5563;
+    margin-top: 2px;
+  }
+
+  .edu-period {
+    font-size: 9pt;
+    color: #6b7280;
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+
+  /* ── Skills / chips ── */
+  .skills-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .skill-chip {
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 8.5pt;
+    color: #0f766e;
+  }
+
+  /* ── Simple items ── */
+  .simple-item { margin-bottom: 10px; }
+
+  .simple-title {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #111827;
+  }
+
+  .simple-sub {
+    font-size: 9pt;
+    color: #4b5563;
+    margin-top: 1px;
+  }
+
+  .simple-detail {
+    font-size: 9pt;
+    color: #374151;
+    margin-top: 4px;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; width: 100%; min-height: unset; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="cv-header">
+    <div class="cv-header-text">
+      <h1>Eilam Cohen</h1>
+      <div class="cv-title">Business Development &amp; Management</div>
+      <div class="cv-contacts">
+        <span>Eilamcohen.b@gmail.com</span>
+        <span>+972-52-890-8006</span>
+        <span>Tel Aviv, Israel</span>
+      </div>
+    </div>
+    <img class="cv-photo" src="Eilam profile picture.jpeg" alt="Eilam Cohen">
+  </header>
+
+  <main class="cv-body">
+
+    <div class="summary">
+      <p>Strategic business professional with experience at a global tech leader driving cross-functional initiatives, building ecosystem partnerships, and managing complex stakeholder environments. Combines commercial acumen with hands-on execution — proven track record of translating organizational vision into tangible business outcomes. Backed by a Business Management degree and deep experience owning large budgets, leading teams, and negotiating high-value partnerships.</p>
+    </div>
+
+    <section class="cv-section">
+      <div class="section-heading">Work Experience</div>
+
+      <div class="exp-item">
+        <div class="exp-top">
+          <span class="exp-role">Monetization Manager</span>
+          <span class="exp-period">2024 – 2026</span>
+        </div>
+        <div class="exp-org">Playtika · Tel Aviv, Israel</div>
+        <ul class="exp-bullets">
+          <li>Responsible for achieving the game's business KPIs through data-driven decisions.</li>
+          <li>Worked closely with management and key stakeholders, including leading meetings, delivering presentations, and communicating results effectively.</li>
+          <li>Collaborated with analytics, product, and design teams to define the right experience for each user.</li>
+          <li>Reviewed user behavior and performance to identify trends and drive actionable improvements.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-top">
+          <span class="exp-role">Marketing &amp; Metaverse Operations Manager</span>
+          <span class="exp-period">2021 – 2023</span>
+        </div>
+        <div class="exp-org">Meta · Tel Aviv, Israel</div>
+        <ul class="exp-bullets">
+          <li>Led Meta Israel's Metaverse business strategy, aligning cross-functional stakeholders across development, product, policy, marketing, and the startup ecosystem to execute the company's strategic vision.</li>
+          <li>Built and managed strategic partnerships with key players in Israel's startup ecosystem, driving program adoption and long-term business relationships.</li>
+          <li>Drove complex cross-functional initiatives from ideation through execution, navigating a multi-stakeholder EMEA environment to co-launch regional programs.</li>
+          <li>Owned hardware procurement and deployment operations, demonstrating P&amp;L discipline and end-to-end business accountability.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-top">
+          <span class="exp-role">Head of Culture Department</span>
+          <span class="exp-period">2020 – 2021</span>
+        </div>
+        <div class="exp-org">Ben-Gurion University Students Union</div>
+        <ul class="exp-bullets">
+          <li>Led a business unit serving 25,000+ students, with full accountability for strategy, team performance, and a 2M+ NIS annual budget.</li>
+          <li>Developed and executed annual business plans, ensuring alignment between organizational goals and operational delivery.</li>
+          <li>Built and managed a high-performing 20-person team, establishing clear KPIs, workflows, and accountability structures.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-top">
+          <span class="exp-role">Deputy Head of Culture &amp; Productions Manager</span>
+          <span class="exp-period">2019 – 2020</span>
+        </div>
+        <div class="exp-org">Ben-Gurion University Students Union</div>
+        <ul class="exp-bullets">
+          <li>Drove organizational planning and execution of a full annual programs calendar, coordinating across multiple workstreams.</li>
+          <li>Negotiated contracts with artists, vendors, and service providers — managing commercial terms, deliverables, and timelines.</li>
+          <li>Owned budget planning, financial oversight, and cost control for all events and productions.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="bottom-grid">
+      <div>
+        <section class="cv-section">
+          <div class="section-heading">Education</div>
+          <div class="edu-item">
+            <div>
+              <div class="edu-degree">BA Business Management</div>
+              <div class="edu-school">Ben-Gurion University of the Negev<br>Specialization in Marketing · Economics · Accounting · Org. Management</div>
+            </div>
+            <div class="edu-period">2018 – 2021</div>
+          </div>
+        </section>
+
+        <section class="cv-section">
+          <div class="section-heading">Military Service</div>
+          <div class="simple-item">
+            <div class="simple-title">Combat Service Support, Intelligence</div>
+            <div class="simple-sub">Israel Defense Forces · 2012 – 2016</div>
+            <div class="simple-detail">Served in a special intelligence unit.</div>
+          </div>
+        </section>
+
+        <section class="cv-section">
+          <div class="section-heading">Volunteer</div>
+          <div class="simple-item">
+            <div class="simple-title">Year of Service – "Ben Shemen" Youth Village</div>
+            <div class="simple-sub">2011 – 2012</div>
+            <div class="simple-detail">Mentored at-risk youth through agricultural and community programs.</div>
+          </div>
+        </section>
+      </div>
+
+      <div>
+        <section class="cv-section">
+          <div class="section-heading">Core Skills</div>
+          <div class="skills-wrap">
+            <span class="skill-chip">Business Strategy &amp; Planning</span>
+            <span class="skill-chip">Stakeholder Management</span>
+            <span class="skill-chip">Cross-functional Leadership</span>
+            <span class="skill-chip">Budget &amp; P&amp;L</span>
+            <span class="skill-chip">Business Development</span>
+            <span class="skill-chip">Contract Negotiation</span>
+            <span class="skill-chip">Strategic Partnerships</span>
+            <span class="skill-chip">Team Leadership</span>
+            <span class="skill-chip">Program Management</span>
+            <span class="skill-chip">Claude Code</span>
+          </div>
+        </section>
+
+        <section class="cv-section">
+          <div class="section-heading">Languages</div>
+          <div class="skills-wrap">
+            <span class="skill-chip">Hebrew — Native</span>
+            <span class="skill-chip">English — Fluent</span>
+          </div>
+        </section>
+      </div>
+    </div>
+
+  </main>
+</div>
+</body>
+</html>
