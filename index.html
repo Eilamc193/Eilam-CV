@@ -42,285 +42,157 @@
   }
 
   .photo {
-    width: 76px;
-    height: 76px;
+    width: 80px;
+    height: 80px;
+    background: #fff;
     border-radius: 50%;
-    object-fit: cover;
-    border: 2.5px solid rgba(255,255,255,0.6);
     flex-shrink: 0;
+    overflow: hidden;
   }
 
-  .header-text h1 {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: -0.3px;
-    margin-bottom: 2px;
-  }
+  .photo img { width: 100%; height: 100%; object-fit: cover; }
 
-  .header-title {
-    font-size: 12px;
-    opacity: 0.78;
-    letter-spacing: 0.3px;
-    margin-bottom: 14px;
-  }
+  .name { font-size: 24px; font-weight: 700; margin-bottom: 2px; }
+  .title { font-size: 14px; opacity: 0.9; font-weight: 500; }
 
-  .contacts {
+  /* ── Contact Bar ── */
+  .contact-bar {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .contacts a {
-    color: rgba(255,255,255,0.92);
-    text-decoration: none;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-
-  .contacts a:hover { opacity: 0.8; }
-
-  /* ── Body ── */
-  .body {
-    padding: 22px 24px 40px;
-  }
-
-  /* ── Summary ── */
-  .summary {
-    font-size: 13px;
-    color: #374151;
-    line-height: 1.7;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    gap: 16px;
+    padding: 12px 24px;
+    background: #f9fafb;
     border-bottom: 1px solid #e5e7eb;
+    font-size: 12px;
+    color: var(--sub);
+  }
+  
+  .contact-bar a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .contact-bar a:hover { text-decoration: underline; }
+
+  /* ── Main Layout ── */
+  main { padding: 24px; }
+
+  .summary { margin-bottom: 24px; font-size: 13.5px; color: var(--sub); }
+
+  /* שינוי כאן: שימוש ב-Grid שמתאים את עצמו */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
   }
 
-  /* ── Section ── */
-  .section { margin-bottom: 22px; }
-
+  .section { margin-bottom: 28px; }
   .section-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 1.4px;
     text-transform: uppercase;
     color: var(--accent);
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 5px;
-    margin-bottom: 14px;
+    letter-spacing: 0.05em;
+    border-bottom: 1.5px solid var(--accent-border);
+    padding-bottom: 4px;
+    margin-bottom: 12px;
   }
 
-  /* ── Experience ── */
-  .exp { margin-bottom: 18px; }
-  .exp:last-child { margin-bottom: 0; }
+  .item { margin-bottom: 16px; }
+  .item-header { display: flex; justify-content: space-between; align-items: baseline; }
+  .item-title { font-weight: 700; color: var(--text); }
+  .item-period { font-size: 11px; color: var(--muted); white-space: nowrap; }
+  .item-detail { font-size: 12px; color: var(--sub); margin-top: 2px; }
+  
+  .desc-list { margin-top: 6px; padding-left: 16px; list-style: disc; color: var(--sub); font-size: 12.5px; }
+  .desc-list li { margin-bottom: 4px; }
 
-  .exp-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 1px;
-  }
-
-  .exp-role {
-    font-size: 13.5px;
-    font-weight: 700;
-    color: var(--text);
-    flex: 1;
-  }
-
-  .exp-period {
-    font-size: 11px;
-    color: var(--muted);
-    white-space: nowrap;
-    padding-top: 2px;
-  }
-
-  .exp-org {
-    font-size: 12px;
-    color: var(--sub);
-    margin-bottom: 8px;
-  }
-
-  .bullets { list-style: none; }
-
-  .bullets li {
-    position: relative;
-    padding-left: 13px;
-    margin-bottom: 5px;
-    font-size: 12.5px;
-    color: #374151;
-    line-height: 1.55;
-  }
-
-  .bullets li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-weight: bold;
-  }
-
-  /* ── Two-column grid (collapses on small screens) ── */
-  .two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
-
-  @media (max-width: 480px) {
-    .two-col { grid-template-columns: 1fr; gap: 0; }
-  }
-
-  /* ── Education / simple items ── */
-  .item { margin-bottom: 10px; }
-
-  .item-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--text);
-  }
-
-  .item-sub {
-    font-size: 12px;
-    color: var(--sub);
-    margin-top: 1px;
-  }
-
-  .item-detail {
-    font-size: 12px;
-    color: #374151;
-    margin-top: 3px;
-  }
-
-  .item-period {
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: 1px;
-  }
-
-  /* ── Skill chips ── */
-  .chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
   .chip {
     background: var(--accent-light);
-    border: 1px solid var(--accent-border);
-    border-radius: 4px;
-    padding: 4px 9px;
-    font-size: 11px;
     color: var(--accent);
+    border: 1px solid var(--accent-border);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
     font-weight: 500;
+  }
+
+  /* ── Mobile Optimization (מדיה קוואריז) ── */
+  @media (max-width: 640px) {
+    .header { flex-direction: column; text-align: center; padding: 20px; }
+    .contact-bar { justify-content: center; gap: 10px; }
+    .main-grid { grid-template-columns: 1fr; gap: 20px; }
+    .item-header { flex-direction: column; }
+    .item-period { margin-top: 2px; }
+    .page { width: 100%; }
   }
 </style>
 </head>
 <body>
-<div class="page">
 
+<div class="page">
   <header class="header">
-    <img class="photo" src="Eilam profile picture.jpeg" alt="Eilam Cohen">
-    <div class="header-text">
-      <h1>Eilam Cohen</h1>
-      <div class="header-title">Business Development, Marketing &amp; Operations</div>
-      <div class="contacts">
-        <a href="mailto:Eilamcohen.b@gmail.com">✉ Eilamcohen.b@gmail.com</a>
-        <a href="tel:+972528908006">📱 +972-52-890-8006</a>
-      </div>
+    <div class="photo">
+       <img src="YOUR_IMAGE_URL_HERE" alt="Eilam Cohen">
+    </div>
+    <div>
+      <h1 class="name">Eilam Cohen</h1>
+      <p class="title">Entrepreneur & Hands-on Builder | Monetization, Product & Marketing Expert</p>
     </div>
   </header>
 
-  <main class="body">
+  <div class="contact-bar">
+    <span>📍 Kibbutz HaHotrim, Israel</span>
+    <span>📞 +972-54-633-1262</span>
+    <span>📧 eilamc193@gmail.com</span>
+    <a href="https://www.linkedin.com/in/eilam-cohen/" target="_blank">🔗 LinkedIn Profile</a>
+  </div>
 
-    <p class="summary">Business professional with experience at Meta and Playtika, combining strategic thinking with hands-on execution across marketing, operations, and team leadership. Holds a BA in Business Management.</p>
-
-    <section class="section">
-      <div class="section-title">Work Experience</div>
-
-      <div class="exp">
-        <div class="exp-top">
-          <span class="exp-role">Monetization Manager</span>
-          <span class="exp-period">2024 – 2026</span>
-        </div>
-        <div class="exp-org">Playtika · Tel Aviv, Israel</div>
-        <ul class="bullets">
-          <li>Responsible for achieving the game's business KPIs through data-driven decisions.</li>
-          <li>Worked closely with management and key stakeholders — leading meetings, delivering presentations, and communicating results effectively.</li>
-          <li>Collaborated with analytics, product, and design teams to define the right experience for each user.</li>
-          <li>Reviewed user behavior and performance to identify trends and drive actionable improvements.</li>
-        </ul>
-      </div>
-
-      <div class="exp">
-        <div class="exp-top">
-          <span class="exp-role">Marketing &amp; Metaverse Operations Manager</span>
-          <span class="exp-period">2021 – 2023</span>
-        </div>
-        <div class="exp-org">Meta · Tel Aviv, Israel</div>
-        <ul class="bullets">
-          <li>Led Meta Israel's Metaverse marketing operation, coordinating across product, policy, and marketing teams to execute the company's vision locally.</li>
-          <li>Developed and executed integrated marketing programs — events, training sessions, campaigns, and digital content — targeted at the Israeli startup ecosystem.</li>
-          <li>Built and managed relationships with key opinion leaders, ecosystem partners, and tech community stakeholders.</li>
-          <li>Collaborated with EMEA marketing teams to co-design cross-regional go-to-market programs, ensuring consistent brand messaging across markets.</li>
-          <li>Owned hardware procurement and deployment operations with full P&amp;L accountability.</li>
-        </ul>
-      </div>
-
-      <div class="exp">
-        <div class="exp-top">
-          <span class="exp-role">Head of Culture Department</span>
-          <span class="exp-period">2020 – 2021</span>
-        </div>
-        <div class="exp-org">Ben-Gurion University Students Union</div>
-        <ul class="bullets">
-          <li>Led a business unit serving 25,000+ students with full accountability for strategy, team performance, and a 2M+ NIS annual budget.</li>
-          <li>Built and managed a high-performing 20-person team with clear KPIs and accountability structures.</li>
-        </ul>
-      </div>
-
-      <div class="exp">
-        <div class="exp-top">
-          <span class="exp-role">Deputy Head of Culture &amp; Productions Manager</span>
-          <span class="exp-period">2019 – 2020</span>
-        </div>
-        <div class="exp-org">Ben-Gurion University Students Union</div>
-        <ul class="bullets">
-          <li>Drove organizational planning and execution of a full annual programs calendar across multiple workstreams.</li>
-          <li>Negotiated contracts with artists, vendors, and service providers — managing commercial terms, deliverables, and timelines.</li>
-        </ul>
-      </div>
+  <main>
+    <section class="summary">
+      Results-driven professional with a proven track record in high-growth gaming companies (Playtika, SciPlay). Expert in balancing aggressive business monetization with sustainable product health. Currently building a B2B automation app and an interactive sports-media ecosystem (Kings League format).
     </section>
 
-    <div class="two-col">
+    <div class="main-grid">
       <div>
+        <section class="section">
+          <div class="section-title">Work Experience</div>
+          
+          <div class="item">
+            <div class="item-header">
+              <span class="item-title">Founder & Builder | Digital Ventures</span>
+              <span class="item-period">2024 – Present</span>
+            </div>
+            <ul class="desc-list">
+              <li>Developing a B2B workflow automation app using AI-assisted building and Claude Code.</li>
+              <li>Pitching and architecting "Hashchuna" – an interactive sports ecosystem for the Israeli market.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="item-header">
+              <span class="item-title">Monetization Manager | Playtika</span>
+              <span class="item-period">2022 – 2024</span>
+            </div>
+            <div class="item-detail">Led monetization strategies for "Solitaire Grand Harvest", focusing on LTV and retention.</div>
+          </div>
+          
+          <div class="item">
+            <div class="item-header">
+              <span class="item-title">Marketing Operations | SciPlay</span>
+              <span class="item-period">2019 – 2022</span>
+            </div>
+            <div class="item-detail">Managed large-scale UA budgets and optimized marketing funnel efficiency.</div>
+          </div>
+        </section>
+
         <section class="section">
           <div class="section-title">Education</div>
           <div class="item">
-            <div class="item-title">BA Business Management</div>
-            <div class="item-sub">Ben-Gurion University of the Negev</div>
-            <div class="item-detail">Marketing · Economics · Accounting · Org. Management</div>
-            <div class="item-period">2018 – 2021</div>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="section-title">Military Service</div>
-          <div class="item">
-            <div class="item-title">Combat Service Support, Intelligence</div>
-            <div class="item-sub">Israel Defense Forces</div>
-            <div class="item-detail">Served in a special intelligence unit.</div>
-            <div class="item-period">2012 – 2016</div>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="section-title">Volunteer</div>
-          <div class="item">
-            <div class="item-title">Year of Service – "Ben Shemen" Youth Village</div>
-            <div class="item-detail">Mentored at-risk youth through agricultural and community programs.</div>
-            <div class="item-period">2011 – 2012</div>
+            <div class="item-title">BA in Business Administration & Marketing</div>
+            <div class="item-detail">Reichman University (IDC Herzliya)</div>
           </div>
         </section>
       </div>
@@ -332,13 +204,9 @@
             <span class="chip">Data-driven Decision Making</span>
             <span class="chip">Business Strategy</span>
             <span class="chip">Stakeholder Management</span>
-            <span class="chip">Strategic Partnerships</span>
-            <span class="chip">Team Leadership</span>
-            <span class="chip">Program Management</span>
             <span class="chip">B2B Product Development</span>
             <span class="chip">AI-Assisted App Building</span>
-            <span class="chip">Claude Code</span>
-            <span class="chip">Budget &amp; P&amp;L</span>
+            <span class="chip">Budget & P&L</span>
           </div>
         </section>
 
@@ -351,8 +219,8 @@
         </section>
       </div>
     </div>
-
   </main>
 </div>
+
 </body>
 </html>
